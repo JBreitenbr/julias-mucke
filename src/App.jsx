@@ -1,5 +1,6 @@
 import './App.css'
 import {useState} from 'react'
+import {Tooltip} from 'react-tooltip'
 import {tDict} from './tDict'
 import {bandsDict} from './bandsDict'
 
@@ -18,12 +19,29 @@ export default function App() {
 tDict[bandName].map(
 (item,index) => {
 return (
- <><li key={index} className="track-item"><div className="list-wrapper">
+ <><li key={index} className="track-item"><a data-tooltip-id={`tooltip_${index}`} key={index}><div className="list-wrapper">
     <img className="track-album" src={item.imgUrl} />
     <div className="track-info">
     <div className="track-name">{item.track}</div>
-     <div className="track-artist">{item.artist}</div></div></div> 
-  </li></>)})
+     <div className="track-artist">{item.artist}</div>
+    </div></div>   <Tooltip id={`tooltip_${index}`} key={index}>
+  <div className="tooltip">
+    <ul>
+      <li>Track: {item.track}</li>
+      <li>Released: {item.release_date}</li>
+      <li>Key/Mode: {item.key_mode}</li>
+      <li>Danceability: {item.danceability}</li>
+      <li>Energy: {item.energy}</li>
+      <li>Loudness: {item.loudness}</li><li>Speechiness: {item.speechiness}</li>
+      <li>Acousticness: {item.acousticness}</li>
+      <li>Instrumentalness: {item.instrumentalness}</li>
+      <li>Liveness: {item.liveness}</li>
+      <li>Valence: {item.valence}</li>
+      <li>Tempo: {item.tempo}</li>
+      <li>Duration (minutes): {item.duration_mins}</li>
+
+    </ul></div></Tooltip>
+ </a></li></>)})
 
 
   return (
