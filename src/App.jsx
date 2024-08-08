@@ -23,7 +23,6 @@ return (
     <img className="track-album" src={item.imgUrl} />
     <div className="track-info">
     <div className="track-name">{item.track}</div>
-     <div className="track-artist">{item.artist}</div>
     </div></div>   <Tooltip id={`tooltip_${index}`} key={index}>
   <div className="tooltip">
     <ul>
@@ -58,7 +57,7 @@ return (
         {bands.map(item=>
           <option key={item.name}>{item.name}</option>
         )}</select><br/>
-      {bandName=="none"?<img style={{paddingTop:"25px"}} src="https://www.dropbox.com/scl/fi/vp8t07rwynl6fdc1bvozt/20-das-bedeutet-die-absage-fuer-die-veranstalter-16-9-spoton-article-744799.jpg?rlkey=gvffqqkdqzayj6okdgv30qjjg&raw=1"/>:<ol>{topItems}</ol>}
+      {bandName=="none"?<img style={{paddingTop:"25px"}} id="hippie" src="https://www.dropbox.com/scl/fi/z3vnb5jbki0oggeswo15j/woodstock-32-1200x600.jpg?rlkey=npno20o9rp4nczcvexlh6an2g&st=9wz33y0x&raw=1"/>:<ol>{topItems}</ol>}
     </div>
   )
 }
